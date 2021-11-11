@@ -1,6 +1,6 @@
 # Starter pipeline
 
-name: string  # build numbering format
+name: CreateDatabaseServer  # build numbering format
 
 steps:
 - task: AzureCLI@2
