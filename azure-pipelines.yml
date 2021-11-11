@@ -13,8 +13,7 @@ steps:
       
       az sql server create -l eastus -g cr_server_01 -n SOCMecha44 -u clopez  -p "Clave01*"
       
-      
-      
+          
       az sql db create -g cr_server_01 -s SOCMecha44 -n GX_05 -e GeneralPurpose `
       --family Gen5 --min-capacity 0.5 -c 1 --compute-model Serverless --auto-pause-delay 60 `
       --service-objective Basic  --backup-storage-redundancy Local --collation SQL_Latin1_General_CP1_CI_AS
