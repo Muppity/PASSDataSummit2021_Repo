@@ -5,8 +5,8 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: $(AZURESUBSCRIPTIONVALUE)
-    scriptType: 'bash'
+    azureSubscription: '$(AZURESUBSCRIPTIONVALUE)'
+    scriptType: 'batch'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az group create --location eastus --resource-group cr_server_01
