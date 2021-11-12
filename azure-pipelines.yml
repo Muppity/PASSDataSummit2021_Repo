@@ -1,12 +1,11 @@
 # Starter pipeline
 
 name: CreateDatabaseServer  # build numbering format
-
 steps:
 
-container:
 - task: AzureCLI@2
   inputs:
+    azureSubscription: 'Suscripción de Visual Studio Enterprise(e1a58cf5-c577-4912-86bc-e447daa4207c)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
