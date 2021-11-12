@@ -9,7 +9,7 @@ steps:
     scriptType: 'batch'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az group create --location eastus --resource-group cr_server_01
+      az group create --location eastus --resource-group $(RGNAME)
             
       #az sql server create -l eastus -g cr_server_01 -n SOCMecha44 -u clopez  -p "Clave01*"
             
