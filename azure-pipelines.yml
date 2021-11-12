@@ -3,20 +3,22 @@
 name: CreateDatabaseServer  # build numbering format
 
 steps:
+
+container:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Visual Studio Enterprise Subscription(2ccdf1d4-3205-4125-9488-5594d4eb7e1d)'
-    scriptType: 'batch'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az group create --location eastus --resource-group cr_server_01
-      
-      az sql server create -l eastus -g cr_server_01 -n SOCMecha44 -u clopez  -p "Clave01*"
-      
-          
-      az sql db create -g cr_server_01 -s SOCMecha44 -n GX_05 -e GeneralPurpose `
-      --family Gen5 --min-capacity 0.5 -c 1 --compute-model Serverless --auto-pause-delay 60 `
-      --service-objective Basic  --backup-storage-redundancy Local --collation SQL_Latin1_General_CP1_CI_AS
+            
+            az sql server create -l eastus -g cr_server_01 -n SOCMecha44 -u clopez  -p "Clave01*"
+            
+                
+            az sql db create -g cr_server_01 -s SOCMecha44 -n GX_05 -e GeneralPurpose `
+            --family Gen5 --min-capacity 0.5 -c 1 --compute-model Serverless --auto-pause-delay 60 `
+            --service-objective Basic  --backup-storage-redundancy Local --collation SQL_Latin1_General_CP1_CI_AS
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
